@@ -10,5 +10,6 @@ namespace CalisthenicsAPI.Data
         IEnumerable<Exercise> GetAllExercises();
         Exercise GetExerciseById(int id);
         void CreateExercise(Exercise exercise);
+        void UpdateExercise(Exercise exercise);
     }
 }

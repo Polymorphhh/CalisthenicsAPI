@@ -39,5 +39,10 @@ namespace CalisthenicsAPI.Data
         {
             throw new System.NotImplementedException();
         }
+
+        public void UpdateExercise(Exercise exercise)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

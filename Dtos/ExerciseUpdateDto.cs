@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CalisthenicsAPI.Dtos
 {
-    public class ExerciseCreateDto
+    public class ExerciseUpdateDto
     {
         [Required]
         public string Name { get; set; }

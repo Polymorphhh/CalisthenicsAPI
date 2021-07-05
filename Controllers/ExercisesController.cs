@@ -56,5 +56,22 @@ namespace CalisthenicsAPI.Controllers
 
             return CreatedAtRoute(nameof(GetExerciseById), new {Id = exerciseReadDto.Id}, exerciseReadDto);
         }
+
+        // PUT api/exercises/{id}
+        [HttpPut("{id}")]
+        public ActionResult UpdateExercise(int id, ExerciseUpdateDto exerciseUpdateDto)
+        {
+            var exerciseModelFromRepo = _repository.GetExerciseById(id);
+            if (exerciseModelFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            exerciseModelFromRepo = _mapper.Map(exerciseUpdateDto, exerciseModelFromRepo);
+            _repository.UpdateExercise(exerciseModelFromRepo);
+            _repository.SaveChanges();
+
+            return NoContent();
+        }
     }
 }

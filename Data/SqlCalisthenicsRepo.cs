@@ -38,5 +38,10 @@ namespace CalisthenicsAPI.Data
         {
             return (_context.SaveChanges() >= 0);
         }
+
+        public void UpdateExercise(Exercise exercise)
+        {
+            // Nothing
+        }
     }
 }
