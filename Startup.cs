@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CalisthenicsAPI.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +33,8 @@ namespace CalisthenicsAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CalisthenicsAPI", Version = "v1" });
             });
+
+            services.AddScoped<ICalisthenicsRepo, MockCalisthenicsRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
