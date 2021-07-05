@@ -5,6 +5,11 @@ namespace CalisthenicsAPI.Data
 {
     public class MockCalisthenicsRepo : ICalisthenicsRepo
     {
+        public void CreateExercise(Exercise exercise)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IEnumerable<Exercise> GetAllExercises()
         {
             var exercises = new List<Exercise>
@@ -28,6 +33,11 @@ namespace CalisthenicsAPI.Data
             return new Exercise { Id=0, Name="Push-Up", Description=@"Exercise done laying with face, 
                     palms and toes facing down, keeping legs and back straight, extending arms straight to 
                     push body up and back down again.", Hold=false };
+        }
+
+        public bool SaveChanges()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

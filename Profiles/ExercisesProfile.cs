@@ -9,6 +9,7 @@ namespace CalisthenicsAPI.Profiles
         public ExercisesProfile()
         {
             CreateMap<Exercise, ExerciseReadDto>();
+            CreateMap<ExerciseCreateDto, Exercise>();
         }
     }
 }

@@ -31,7 +31,7 @@ namespace CalisthenicsAPI.Controllers
         }
 
         // GET api/exercises/{id}
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name ="GetExerciseById")]
         public ActionResult<ExerciseReadDto> GetExerciseById(int id)
         {
             var exerciseItem = _repository.GetExerciseById(id);
@@ -42,6 +42,19 @@ namespace CalisthenicsAPI.Controllers
             }
 
             return NotFound();
+        }
+
+        // POST api/exercises
+        [HttpPost]
+        public ActionResult<ExerciseReadDto> CreateExercise(ExerciseCreateDto exerciseCreateDto)
+        {
+            var exerciseModel = _mapper.Map<Exercise>(exerciseCreateDto);
+            _repository.CreateExercise(exerciseModel);
+            _repository.SaveChanges();
+
+            var exerciseReadDto = _mapper.Map<ExerciseReadDto>(exerciseModel);
+
+            return CreatedAtRoute(nameof(GetExerciseById), new {Id = exerciseReadDto.Id}, exerciseReadDto);
         }
     }
 }
