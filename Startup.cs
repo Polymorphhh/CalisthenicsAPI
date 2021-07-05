@@ -42,6 +42,8 @@ namespace CalisthenicsAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CalisthenicsAPI", Version = "v1" });
             });
 
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             services.AddScoped<ICalisthenicsRepo, SqlCalisthenicsRepo>();
         }
 

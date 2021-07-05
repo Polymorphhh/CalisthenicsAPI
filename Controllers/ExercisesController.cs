@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using AutoMapper;
 using CalisthenicsAPI.Data;
+using CalisthenicsAPI.Dtos;
 using CalisthenicsAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,26 +12,36 @@ namespace CalisthenicsAPI.Controllers
     public class ExercisesController : ControllerBase
     {
         private readonly ICalisthenicsRepo _repository;
+        private readonly IMapper _mapper;
 
-        public ExercisesController(ICalisthenicsRepo repository)
+        public ExercisesController(ICalisthenicsRepo repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
         // GET api/exercises
         [HttpGet]
         public ActionResult<IEnumerable<Exercise>> GetAllExercises()
         {
-            var commandItems = _repository.GetAllExercises();
-            return Ok(commandItems);
+            var exerciseItems = _repository.GetAllExercises();
+            var exerciseReadDtos = _mapper.Map<IEnumerable<ExerciseReadDto>>(exerciseItems);
+
+            return Ok(exerciseReadDtos);
         }
 
         // GET api/exercises/{id}
         [HttpGet("{id}")]
-        public ActionResult<Exercise> GetExerciseById(int id)
+        public ActionResult<ExerciseReadDto> GetExerciseById(int id)
         {
-            var commandItem = _repository.GetExerciseById(id);
-            return Ok(commandItem);
+            var exerciseItem = _repository.GetExerciseById(id);
+            if (exerciseItem != null)
+            {
+                var exerciseReadDto = _mapper.Map<ExerciseReadDto>(exerciseItem);
+                return Ok(exerciseReadDto);
+            }
+
+            return NotFound();
         }
     }
 }
