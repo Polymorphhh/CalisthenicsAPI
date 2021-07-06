@@ -11,5 +11,7 @@ namespace CalisthenicsAPI.Data
         }
 
         public DbSet<Exercise> Exercises { get; set; }
+        public DbSet<TrainingExercise> TrainingExercises { get; set; }
+        public DbSet<Set> Sets { get; set; }
     }
 }

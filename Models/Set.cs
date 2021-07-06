@@ -1,17 +1,19 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace CalisthenicsAPI.Models
 {
-    public class TrainingExercise
+    public class Set
     {
         [Key]
         public int Id { get; set; }
 
         [Required]
-        public Exercise RefExercise { get; set; }
-           
-        public int Duration { get; set; }
-
         public int Repetition { get; set; }
+        
+        [Required]
+        public int RestTime { get; set; }
+
+        public ICollection<TrainingExercise> TrainingExercises { get; set; }
     }
 }
