@@ -10,6 +10,11 @@ namespace CalisthenicsAPI.Data
             throw new System.NotImplementedException();
         }
 
+        public void DeleteExercise(Exercise exercise)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IEnumerable<Exercise> GetAllExercises()
         {
             var exercises = new List<Exercise>

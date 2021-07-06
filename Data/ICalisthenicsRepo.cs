@@ -11,5 +11,6 @@ namespace CalisthenicsAPI.Data
         Exercise GetExerciseById(int id);
         void CreateExercise(Exercise exercise);
         void UpdateExercise(Exercise exercise);
+        void DeleteExercise(Exercise exercise);
     }
 }

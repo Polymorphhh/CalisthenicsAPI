@@ -73,5 +73,21 @@ namespace CalisthenicsAPI.Controllers
 
             return NoContent();
         }
+
+        // DELETE api/exercises/{id}
+        [HttpDelete("{id}")]
+        public ActionResult DeleteExercise(int id)
+        {
+            var exerciseModelFromRepo = _repository.GetExerciseById(id);
+            if (exerciseModelFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            _repository.DeleteExercise(exerciseModelFromRepo);
+            _repository.SaveChanges();
+
+            return NoContent();
+        }
     }
 }

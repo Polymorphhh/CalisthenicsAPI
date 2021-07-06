@@ -24,6 +24,16 @@ namespace CalisthenicsAPI.Data
             _context.Exercises.Add(exercise);
         }
 
+        public void DeleteExercise(Exercise exercise)
+        {
+            if (exercise == null)
+            {
+                throw new ArgumentNullException(nameof(exercise));
+            }
+            
+            _context.Exercises.Remove(exercise);
+        }
+
         public IEnumerable<Exercise> GetAllExercises()
         {
             return _context.Exercises.ToList();
