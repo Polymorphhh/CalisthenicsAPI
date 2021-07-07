@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace CalisthenicsAPI.Dtos
 {
     public class ExerciseReadDto
