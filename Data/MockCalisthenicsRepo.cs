@@ -63,11 +63,21 @@ namespace CalisthenicsAPI.Data
             return exercises;
         }
 
+        public IEnumerable<Training> GetAllTrainings()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public Exercise GetExerciseById(int id)
         {
             return new Exercise { Id=0, Name="Push-Up", Description=@"Exercise done laying with face, 
                     palms and toes facing down, keeping legs and back straight, extending arms straight to 
                     push body up and back down again.", Hold=false };
+        }
+
+        public Training GetTrainingById(int id)
+        {
+            throw new System.NotImplementedException();
         }
 
         public bool SaveChanges()

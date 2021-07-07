@@ -22,7 +22,7 @@ namespace CalisthenicsAPI.Controllers
 
         // GET api/exercises
         [HttpGet]
-        public ActionResult<IEnumerable<Exercise>> GetAllExercises()
+        public ActionResult<IEnumerable<ExerciseReadDto>> GetAllExercises()
         {
             var exerciseItems = _repository.GetAllExercises();
             var exerciseReadDtos = _mapper.Map<IEnumerable<ExerciseReadDto>>(exerciseItems);

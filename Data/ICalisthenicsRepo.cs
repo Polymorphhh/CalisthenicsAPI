@@ -25,6 +25,8 @@ namespace CalisthenicsAPI.Data
         void DeleteSet(Set set);
 
         // Training
+        IEnumerable<Training> GetAllTrainings();
+        Training GetTrainingById(int id);
         void CreateTraining(Training training);
         void UpdateTraining(Training training);
         void DeleteTraining(Training training);

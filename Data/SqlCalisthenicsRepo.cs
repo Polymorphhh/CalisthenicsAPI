@@ -99,9 +99,19 @@ namespace CalisthenicsAPI.Data
             return _context.Exercises.ToList();
         }
 
+        public IEnumerable<Training> GetAllTrainings()
+        {
+            return _context.Trainings.ToList();
+        }
+
         public Exercise GetExerciseById(int id)
         {
             return _context.Exercises.FirstOrDefault(p => p.Id == id);
+        }
+
+        public Training GetTrainingById(int id)
+        {
+            return _context.Trainings.FirstOrDefault(p => p.Id == id);
         }
 
         public bool SaveChanges()
