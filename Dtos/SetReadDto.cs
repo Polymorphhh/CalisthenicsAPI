@@ -8,6 +8,6 @@ namespace CalisthenicsAPI.Dtos
         
         public int RestTime { get; set; }
 
-        public ICollection<TrainingExerciseReadDto> TrainingExercises { get; set; }
+        public IEnumerable<TrainingExerciseReadDto> TrainingExercises { get; set; }
     }
 }

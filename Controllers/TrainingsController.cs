@@ -26,6 +26,16 @@ namespace CalisthenicsAPI.Controllers
             var trainingItems = _repository.GetAllTrainings();
             var trainingReadDtos = _mapper.Map<IEnumerable<TrainingReadDto>>(trainingItems);
 
+            foreach (TrainingReadDto trainingReadDto in trainingReadDtos)
+            {
+                // get sets by training id
+                // get trainingexercises by setid (for each set)
+                //      then put trainingsexercises
+                // then put sets in training (for each training)
+                
+                //trainingReadDto.Sets = _repository.GetSetsByTrainingId();
+            }
+
             return Ok(trainingReadDtos);
         }
     }

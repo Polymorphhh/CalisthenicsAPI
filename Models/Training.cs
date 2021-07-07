@@ -9,11 +9,11 @@ namespace CalisthenicsAPI.Models
         public int Id { get; set; }
 
         [Required]
-        public int Name { get; set; }
+        public string Name { get; set; }
 
         [MaxLength(250)]
         public string Description { get; set; }   
 
-        public ICollection<Set> Sets { get; set; }
+        public IEnumerable<Set> Sets { get; set; }
     }
 }
