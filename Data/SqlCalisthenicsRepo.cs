@@ -24,6 +24,36 @@ namespace CalisthenicsAPI.Data
             _context.Exercises.Add(exercise);
         }
 
+        public void CreateSet(Set set)
+        {
+            if (set == null)
+            {
+                throw new ArgumentNullException(nameof(set));
+            }
+
+            _context.Sets.Add(set);
+        }
+
+        public void CreateTraining(Training training)
+        {
+            if (training == null)
+            {
+                throw new ArgumentNullException(nameof(training));
+            }
+
+            _context.Trainings.Add(training);
+        }
+
+        public void CreateTrainingExercise(TrainingExercise trainingExercise)
+        {
+            if (trainingExercise == null)
+            {
+                throw new ArgumentNullException(nameof(trainingExercise));
+            }
+
+            _context.TrainingExercises.Add(trainingExercise);
+        }
+
         public void DeleteExercise(Exercise exercise)
         {
             if (exercise == null)
@@ -32,6 +62,36 @@ namespace CalisthenicsAPI.Data
             }
             
             _context.Exercises.Remove(exercise);
+        }
+
+        public void DeleteSet(Set set)
+        {
+            if (set == null)
+            {
+                throw new ArgumentNullException(nameof(set));
+            }
+            
+            _context.Sets.Remove(set);
+        }
+
+        public void DeleteTraining(Training training)
+        {
+            if (training == null)
+            {
+                throw new ArgumentNullException(nameof(training));
+            }
+            
+            _context.Trainings.Remove(training);
+        }
+
+        public void DeleteTrainingExercise(TrainingExercise trainingExercise)
+        {
+            if (trainingExercise == null)
+            {
+                throw new ArgumentNullException(nameof(trainingExercise));
+            }
+            
+            _context.TrainingExercises.Remove(trainingExercise);
         }
 
         public IEnumerable<Exercise> GetAllExercises()
@@ -50,6 +110,21 @@ namespace CalisthenicsAPI.Data
         }
 
         public void UpdateExercise(Exercise exercise)
+        {
+            // Nothing
+        }
+
+        public void UpdateSet(Set set)
+        {
+            // Nothing
+        }
+
+        public void UpdateTraining(Training training)
+        {
+            // Nothing
+        }
+
+        public void UpdateTrainingExercise(TrainingExercise trainingExercise)
         {
             // Nothing
         }

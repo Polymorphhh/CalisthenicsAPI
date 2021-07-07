@@ -10,7 +10,37 @@ namespace CalisthenicsAPI.Data
             throw new System.NotImplementedException();
         }
 
+        public void CreateSet(Set set)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void CreateTraining(Training training)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void CreateTrainingExercise(TrainingExercise trainingExercise)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void DeleteExercise(Exercise exercise)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void DeleteSet(Set set)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void DeleteTraining(Training training)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void DeleteTrainingExercise(TrainingExercise trainingExercise)
         {
             throw new System.NotImplementedException();
         }
@@ -46,6 +76,21 @@ namespace CalisthenicsAPI.Data
         }
 
         public void UpdateExercise(Exercise exercise)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void UpdateSet(Set set)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void UpdateTraining(Training training)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void UpdateTrainingExercise(TrainingExercise trainingExercise)
         {
             throw new System.NotImplementedException();
         }
