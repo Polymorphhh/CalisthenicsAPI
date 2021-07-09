@@ -117,7 +117,14 @@ namespace CalisthenicsAPI.Data
 
         public Training GetTrainingById(int id)
         {
-            return _context.Trainings.FirstOrDefault(p => p.Id == id);
+            return _context.Trainings
+                .Where(p => p.Id == id)
+                .OrderBy(p => p.Id)
+                .Include(training => training.Sets)
+                .ThenInclude(set => set.TrainingExercises)
+                .ThenInclude(trainingExercise => trainingExercise.RefExercise)
+                .AsSplitQuery()
+                .FirstOrDefault(p => p.Id == id);
         }
 
         public bool SaveChanges()
