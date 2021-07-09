@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using CalisthenicsAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CalisthenicsAPI.Data
 {
@@ -101,12 +102,22 @@ namespace CalisthenicsAPI.Data
 
         public IEnumerable<Training> GetAllTrainings()
         {
-            return _context.Trainings.ToList();
+            return _context.Trainings
+                .Include(training => training.Sets)
+                .ThenInclude(set => set.TrainingExercises)
+                .ThenInclude(trainingExercise => trainingExercise.RefExercise)
+                .AsSplitQuery()
+                .ToList();
         }
 
         public Exercise GetExerciseById(int id)
         {
             return _context.Exercises.FirstOrDefault(p => p.Id == id);
+        }
+
+        public IEnumerable<Set> GetSetsByTrainingId(int trainingId)
+        {
+            throw new NotImplementedException();
         }
 
         public Training GetTrainingById(int id)

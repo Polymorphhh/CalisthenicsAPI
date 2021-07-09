@@ -14,6 +14,6 @@ namespace CalisthenicsAPI.Models
         [MaxLength(250)]
         public string Description { get; set; }   
 
-        public IEnumerable<Set> Sets { get; set; }
+        public ICollection<Set> Sets { get; set; } = new HashSet<Set>();
     }
 }

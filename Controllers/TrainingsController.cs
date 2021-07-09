@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using AutoMapper;
 using CalisthenicsAPI.Data;
 using CalisthenicsAPI.Dtos;
+using CalisthenicsAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CalisthenicsAPI.Controllers
@@ -24,18 +25,27 @@ namespace CalisthenicsAPI.Controllers
         public ActionResult<IEnumerable<TrainingReadDto>> GetAllTrainings()
         {
             var trainingItems = _repository.GetAllTrainings();
-            var trainingReadDtos = _mapper.Map<IEnumerable<TrainingReadDto>>(trainingItems);
-
-            foreach (TrainingReadDto trainingReadDto in trainingReadDtos)
+            foreach (Training item in trainingItems)
             {
-                // get sets by training id
-                // get trainingexercises by setid (for each set)
-                //      then put trainingsexercises
-                // then put sets in training (for each training)
-                
-                //trainingReadDto.Sets = _repository.GetSetsByTrainingId();
+                System.Console.Out.WriteLine(item.Name);
+                System.Console.Out.WriteLine(item.Sets.Count);
+                foreach (Set set in item.Sets)
+                {
+                    System.Console.Out.WriteLine(set.ToString());
+                }
             }
-
+                       
+            var trainingReadDtos = _mapper.Map<IEnumerable<Training>, IEnumerable<TrainingReadDto>>(trainingItems);
+            foreach (TrainingReadDto item in trainingReadDtos)
+            {
+                System.Console.Out.WriteLine(item.Name);
+                System.Console.Out.WriteLine(item.Sets.Count);
+                foreach (SetReadDto set in item.Sets)
+                {
+                    System.Console.Out.WriteLine(set.ToString());
+                }
+            }
+           
             return Ok(trainingReadDtos);
         }
     }

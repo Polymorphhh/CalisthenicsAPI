@@ -4,10 +4,14 @@ using CalisthenicsAPI.Models;
 
 namespace CalisthenicsAPI.Profiles
 {
-    public class ExercisesProfile : Profile
+    public class CalithenicsProfile : Profile
     {
-        public ExercisesProfile()
+        public CalithenicsProfile()
         {
+            CreateMap<Training, TrainingReadDto>();
+            CreateMap<Set, SetReadDto>();
+            CreateMap<TrainingExercise, TrainingExerciseReadDto>();
+
             CreateMap<Exercise, ExerciseReadDto>();
             CreateMap<ExerciseCreateDto, Exercise>();
             CreateMap<ExerciseUpdateDto, Exercise>();

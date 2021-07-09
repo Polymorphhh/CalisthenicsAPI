@@ -14,6 +14,6 @@ namespace CalisthenicsAPI.Models
         [Required]
         public int RestTime { get; set; }
 
-        public IEnumerable<TrainingExercise> TrainingExercises { get; set; }
+        public ICollection<TrainingExercise> TrainingExercises { get; set; } = new HashSet<TrainingExercise>();
     }
 }

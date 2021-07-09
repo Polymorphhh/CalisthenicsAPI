@@ -7,7 +7,7 @@ namespace CalisthenicsAPI.Dtos
         public int Repetition { get; set; }
         
         public int RestTime { get; set; }
-
-        public IEnumerable<TrainingExerciseReadDto> TrainingExercises { get; set; }
+        
+        public ICollection<TrainingExerciseReadDto> TrainingExercises { get; set; } = new HashSet<TrainingExerciseReadDto>();
     }
 }

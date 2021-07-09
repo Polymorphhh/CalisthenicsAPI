@@ -54,7 +54,7 @@ namespace CalisthenicsAPI.Controllers
 
             var exerciseReadDto = _mapper.Map<ExerciseReadDto>(exerciseModel);
 
-            return CreatedAtRoute(nameof(GetExerciseById), new {Id = exerciseReadDto.Id}, exerciseReadDto);
+            return CreatedAtRoute(nameof(GetExerciseById), new {Id = exerciseModel.Id}, exerciseReadDto);
         }
 
         // PUT api/exercises/{id}

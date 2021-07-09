@@ -8,6 +8,6 @@ namespace CalisthenicsAPI.Dtos
 
         public string Description { get; set; }
 
-        public IEnumerable<SetReadDto> Sets { get; set; }
+        public ICollection<SetReadDto> Sets { get; set; } = new HashSet<SetReadDto>();
     }
 }
