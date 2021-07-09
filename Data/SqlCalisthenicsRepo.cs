@@ -115,11 +115,6 @@ namespace CalisthenicsAPI.Data
             return _context.Exercises.FirstOrDefault(p => p.Id == id);
         }
 
-        public IEnumerable<Set> GetSetsByTrainingId(int trainingId)
-        {
-            throw new NotImplementedException();
-        }
-
         public Training GetTrainingById(int id)
         {
             return _context.Trainings.FirstOrDefault(p => p.Id == id);

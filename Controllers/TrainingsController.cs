@@ -24,27 +24,8 @@ namespace CalisthenicsAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<TrainingReadDto>> GetAllTrainings()
         {
-            var trainingItems = _repository.GetAllTrainings();
-            foreach (Training item in trainingItems)
-            {
-                System.Console.Out.WriteLine(item.Name);
-                System.Console.Out.WriteLine(item.Sets.Count);
-                foreach (Set set in item.Sets)
-                {
-                    System.Console.Out.WriteLine(set.ToString());
-                }
-            }
-                       
+            var trainingItems = _repository.GetAllTrainings();                     
             var trainingReadDtos = _mapper.Map<IEnumerable<Training>, IEnumerable<TrainingReadDto>>(trainingItems);
-            foreach (TrainingReadDto item in trainingReadDtos)
-            {
-                System.Console.Out.WriteLine(item.Name);
-                System.Console.Out.WriteLine(item.Sets.Count);
-                foreach (SetReadDto set in item.Sets)
-                {
-                    System.Console.Out.WriteLine(set.ToString());
-                }
-            }
            
             return Ok(trainingReadDtos);
         }

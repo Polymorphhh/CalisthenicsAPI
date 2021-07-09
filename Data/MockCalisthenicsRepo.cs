@@ -75,11 +75,6 @@ namespace CalisthenicsAPI.Data
                     push body up and back down again.", Hold=false };
         }
 
-        public IEnumerable<Set> GetSetsByTrainingId(int trainingId)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public Training GetTrainingById(int id)
         {
             throw new System.NotImplementedException();
