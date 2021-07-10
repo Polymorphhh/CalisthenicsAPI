@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace CalisthenicsAPI.Models
+namespace CalisthenicsAPI.Dtos
 {
-    public class Set
+    public class SetUpdateDto
     {
-        [Key]
+        [Required]
         public int Id { get; set; }
 
         [Required]
@@ -13,7 +13,7 @@ namespace CalisthenicsAPI.Models
         
         [Required]
         public int RestTime { get; set; }
-
-        public ICollection<TrainingExercise> TrainingExercises { get; set; }
+        
+        public ICollection<TrainingExerciseUpdateDto> TrainingExercises { get; set; }
     }
 }

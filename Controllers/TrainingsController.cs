@@ -43,5 +43,26 @@ namespace CalisthenicsAPI.Controllers
 
             return NotFound();
         }
+
+        // POST api/trainings
+
+        // PUT api/trainings/{id}
+        [HttpPut("{id}")]
+        public ActionResult UpdateTraining(int id, TrainingUpdateDto trainingUpdateDto)
+        {
+            var trainingModelFromRepo = _repository.GetTrainingById(id);
+            if (trainingModelFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            trainingModelFromRepo = _mapper.Map(trainingUpdateDto, trainingModelFromRepo);
+            _repository.UpdateTraining(trainingModelFromRepo);
+            _repository.SaveChanges();
+
+            return NoContent();
+        }
+
+        // DELETE api/training/{id}
     }
 }
