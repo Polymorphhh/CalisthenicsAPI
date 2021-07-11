@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace CalisthenicsAPI.Dtos
@@ -10,7 +9,5 @@ namespace CalisthenicsAPI.Dtos
 
         [MaxLength(250)]
         public string Description { get; set; }
-
-        public ICollection<SetUpdateDto> Sets { get; set; }
     }
 }

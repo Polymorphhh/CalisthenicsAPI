@@ -45,14 +45,14 @@ namespace CalisthenicsAPI.Data
             _context.Trainings.Add(training);
         }
 
-        public void CreateTrainingExercise(TrainingExercise trainingExercise)
+        public void CreateSetItem(SetItem setItem)
         {
-            if (trainingExercise == null)
+            if (setItem == null)
             {
-                throw new ArgumentNullException(nameof(trainingExercise));
+                throw new ArgumentNullException(nameof(setItem));
             }
 
-            _context.TrainingExercises.Add(trainingExercise);
+            _context.SetItems.Add(setItem);
         }
 
         public void DeleteExercise(Exercise exercise)
@@ -85,14 +85,14 @@ namespace CalisthenicsAPI.Data
             _context.Trainings.Remove(training);
         }
 
-        public void DeleteTrainingExercise(TrainingExercise trainingExercise)
+        public void DeleteSetItem(SetItem setItem)
         {
-            if (trainingExercise == null)
+            if (setItem == null)
             {
-                throw new ArgumentNullException(nameof(trainingExercise));
+                throw new ArgumentNullException(nameof(setItem));
             }
             
-            _context.TrainingExercises.Remove(trainingExercise);
+            _context.SetItems.Remove(setItem);
         }
 
         public IEnumerable<Exercise> GetAllExercises()
@@ -104,8 +104,7 @@ namespace CalisthenicsAPI.Data
         {
             return _context.Trainings
                 .Include(training => training.Sets)
-                .ThenInclude(set => set.TrainingExercises)
-                .ThenInclude(trainingExercise => trainingExercise.RefExercise)
+                .ThenInclude(set => set.SetItems)
                 .AsSplitQuery()
                 .ToList();
         }
@@ -121,8 +120,7 @@ namespace CalisthenicsAPI.Data
                 .Where(p => p.Id == id)
                 .OrderBy(p => p.Id)
                 .Include(training => training.Sets)
-                .ThenInclude(set => set.TrainingExercises)
-                .ThenInclude(trainingExercise => trainingExercise.RefExercise)
+                .ThenInclude(set => set.SetItems)
                 .AsSplitQuery()
                 .FirstOrDefault(p => p.Id == id);
         }
@@ -147,7 +145,7 @@ namespace CalisthenicsAPI.Data
             // Nothing
         }
 
-        public void UpdateTrainingExercise(TrainingExercise trainingExercise)
+        public void UpdateSetItem(SetItem setItem)
         {
             // Nothing
         }

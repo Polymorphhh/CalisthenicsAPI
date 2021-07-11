@@ -10,7 +10,8 @@ namespace CalisthenicsAPI.Dtos
         
         [Required]
         public int RestTime { get; set; }
-        
-        public ICollection<TrainingExerciseCreateDto> TrainingExercises { get; set; }
+
+        [Required]
+        public int TrainingId { get; set; }
     }
 }

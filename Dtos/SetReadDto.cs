@@ -9,7 +9,9 @@ namespace CalisthenicsAPI.Dtos
         public int Repetition { get; set; }
         
         public int RestTime { get; set; }
+
+        public int TrainingId { get; set; }
         
-        public ICollection<TrainingExerciseReadDto> TrainingExercises { get; set; }
+        public ICollection<SetItemReadDto> SetItems { get; set; }
     }
 }

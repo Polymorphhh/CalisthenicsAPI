@@ -14,10 +14,10 @@ namespace CalisthenicsAPI.Data
         void UpdateExercise(Exercise exercise);
         void DeleteExercise(Exercise exercise);
 
-        // TrainingExercices
-        void CreateTrainingExercise(TrainingExercise trainingExercise);
-        void UpdateTrainingExercise(TrainingExercise trainingExercise);
-        void DeleteTrainingExercise(TrainingExercise trainingExercise);
+        // SetItems
+        void CreateSetItem(SetItem setItem);
+        void UpdateSetItem(SetItem setItem);
+        void DeleteSetItem(SetItem setItem);
 
         // Set
         void CreateSet(Set set);
