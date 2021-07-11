@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using AutoMapper;
 using CalisthenicsAPI.Data;
 using CalisthenicsAPI.Dtos;
@@ -45,6 +46,20 @@ namespace CalisthenicsAPI.Controllers
         }
 
         // POST api/trainings
+        [HttpPost]
+        public ActionResult<TrainingReadDto> CreateTraining(TrainingCreateDto trainingCreateDto)
+        {
+            var trainingModel = _mapper.Map<Training>(trainingCreateDto);
+            _repository.CreateTraining(trainingModel);
+            
+            trainingModel = _mapper.Map(trainingCreateDto, trainingModel);
+
+            _repository.SaveChanges();
+
+            var trainingReadDto = _mapper.Map<TrainingReadDto>(trainingModel);
+
+            return CreatedAtRoute(nameof(GetTrainingById), new {Id = trainingModel.Id}, trainingReadDto);
+        }
 
         // PUT api/trainings/{id}
         [HttpPut("{id}")]

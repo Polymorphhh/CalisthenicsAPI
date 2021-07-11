@@ -21,7 +21,13 @@ namespace CalisthenicsAPI.Profiles
                 .AfterMap(AddOrUpdateTrainingExercises);
             CreateMap<TrainingExerciseUpdateDto, TrainingExercise>();
 
+            CreateMap<TrainingCreateDto, Training>();
+            CreateMap<SetCreateDto, Set>();
+            CreateMap<TrainingExerciseCreateDto, TrainingExercise>()
+            .ForMember(te => te.RefExercise, opt => opt.Ignore());
+
             CreateMap<Exercise, ExerciseReadDto>();
+            CreateMap<ExerciseReadDto, Exercise>();
             CreateMap<ExerciseCreateDto, Exercise>();
             CreateMap<ExerciseUpdateDto, Exercise>();
         }
