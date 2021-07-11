@@ -51,14 +51,13 @@ namespace CalisthenicsAPI.Controllers
         {
             var trainingModel = _mapper.Map<Training>(trainingCreateDto);
             _repository.CreateTraining(trainingModel);
-            
-            trainingModel = _mapper.Map(trainingCreateDto, trainingModel);
-
             _repository.SaveChanges();
 
-            var trainingReadDto = _mapper.Map<TrainingReadDto>(trainingModel);
+            // Commented line below doesn't return the exercises references (not loaded in training model)
+            // var trainingReadDto = _mapper.Map<TrainingReadDto>(trainingModel);
+            var trainingReadDto = _mapper.Map<TrainingReadDto>(_repository.GetTrainingById(trainingModel.Id));
 
-            return CreatedAtRoute(nameof(GetTrainingById), new {Id = trainingModel.Id}, trainingReadDto);
+            return CreatedAtRoute(nameof(GetTrainingById), new {Id = trainingReadDto.Id}, trainingReadDto);
         }
 
         // PUT api/trainings/{id}

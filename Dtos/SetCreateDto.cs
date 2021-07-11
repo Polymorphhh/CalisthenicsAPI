@@ -11,7 +11,8 @@ namespace CalisthenicsAPI.Dtos
         [Required]
         public int RestTime { get; set; }
 
-        [Required]
         public int TrainingId { get; set; }
+
+        public ICollection<SetItemCreateDto> SetItems { get; set; }
     }
 }

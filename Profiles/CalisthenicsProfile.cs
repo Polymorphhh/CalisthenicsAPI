@@ -10,8 +10,16 @@ namespace CalisthenicsAPI.Profiles
         public CalithenicsProfile()
         {
             CreateMap<Training, TrainingReadDto>();
+            CreateMap<TrainingCreateDto, Training>();
+            CreateMap<TrainingUpdateDto, Training>();
+
             CreateMap<Set, SetReadDto>();
+            CreateMap<SetCreateDto, Set>();
+            CreateMap<SetUpdateDto, Set>();
+
             CreateMap<SetItem, SetItemReadDto>();
+            CreateMap<SetItemCreateDto, SetItem>();
+            CreateMap<SetItemUpdateDto, SetItem>();
 
             CreateMap<Exercise, ExerciseReadDto>();
             CreateMap<ExerciseCreateDto, Exercise>();

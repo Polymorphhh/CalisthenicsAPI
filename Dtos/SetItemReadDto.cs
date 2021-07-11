@@ -11,5 +11,7 @@ namespace CalisthenicsAPI.Dtos
         public int SetId { get; set; }
         
         public int ExerciseId { get; set; }
+
+        public ExerciseReadDto Exercise { get; set; }
     }
 }

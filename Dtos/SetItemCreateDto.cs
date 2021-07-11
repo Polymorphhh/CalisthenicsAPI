@@ -8,10 +8,8 @@ namespace CalisthenicsAPI.Dtos
 
         public int Repetition { get; set; }
 
-        [Required]
         public int SetId { get; set; }
-        
-        [Required]
+
         public int ExerciseId { get; set; }
     }
 }

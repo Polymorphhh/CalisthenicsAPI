@@ -105,6 +105,7 @@ namespace CalisthenicsAPI.Data
             return _context.Trainings
                 .Include(training => training.Sets)
                 .ThenInclude(set => set.SetItems)
+                .ThenInclude(setItem => setItem.Exercise)
                 .AsSplitQuery()
                 .ToList();
         }
@@ -121,6 +122,7 @@ namespace CalisthenicsAPI.Data
                 .OrderBy(p => p.Id)
                 .Include(training => training.Sets)
                 .ThenInclude(set => set.SetItems)
+                .ThenInclude(setItem => setItem.Exercise)
                 .AsSplitQuery()
                 .FirstOrDefault(p => p.Id == id);
         }
