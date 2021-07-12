@@ -10,17 +10,7 @@ namespace CalisthenicsAPI.Data
             throw new System.NotImplementedException();
         }
 
-        public void CreateSet(Set set)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void CreateTraining(Training training)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void CreateSetItem(SetItem setItem)
         {
             throw new System.NotImplementedException();
         }
@@ -30,17 +20,7 @@ namespace CalisthenicsAPI.Data
             throw new System.NotImplementedException();
         }
 
-        public void DeleteSet(Set set)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void DeleteTraining(Training training)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void DeleteSetItem(SetItem setItem)
         {
             throw new System.NotImplementedException();
         }
@@ -90,17 +70,7 @@ namespace CalisthenicsAPI.Data
             throw new System.NotImplementedException();
         }
 
-        public void UpdateSet(Set set)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void UpdateTraining(Training training)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void UpdateSetItem(SetItem setItem)
         {
             throw new System.NotImplementedException();
         }

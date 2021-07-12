@@ -14,16 +14,6 @@ namespace CalisthenicsAPI.Data
         void UpdateExercise(Exercise exercise);
         void DeleteExercise(Exercise exercise);
 
-        // SetItems
-        void CreateSetItem(SetItem setItem);
-        void UpdateSetItem(SetItem setItem);
-        void DeleteSetItem(SetItem setItem);
-
-        // Set
-        void CreateSet(Set set);
-        void UpdateSet(Set set);
-        void DeleteSet(Set set);
-
         // Training
         IEnumerable<Training> GetAllTrainings();
         Training GetTrainingById(int id);

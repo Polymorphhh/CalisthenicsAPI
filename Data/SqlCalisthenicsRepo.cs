@@ -25,16 +25,6 @@ namespace CalisthenicsAPI.Data
             _context.Exercises.Add(exercise);
         }
 
-        public void CreateSet(Set set)
-        {
-            if (set == null)
-            {
-                throw new ArgumentNullException(nameof(set));
-            }
-
-            _context.Sets.Add(set);
-        }
-
         public void CreateTraining(Training training)
         {
             if (training == null)
@@ -43,16 +33,6 @@ namespace CalisthenicsAPI.Data
             }
 
             _context.Trainings.Add(training);
-        }
-
-        public void CreateSetItem(SetItem setItem)
-        {
-            if (setItem == null)
-            {
-                throw new ArgumentNullException(nameof(setItem));
-            }
-
-            _context.SetItems.Add(setItem);
         }
 
         public void DeleteExercise(Exercise exercise)
@@ -65,16 +45,6 @@ namespace CalisthenicsAPI.Data
             _context.Exercises.Remove(exercise);
         }
 
-        public void DeleteSet(Set set)
-        {
-            if (set == null)
-            {
-                throw new ArgumentNullException(nameof(set));
-            }
-            
-            _context.Sets.Remove(set);
-        }
-
         public void DeleteTraining(Training training)
         {
             if (training == null)
@@ -83,16 +53,6 @@ namespace CalisthenicsAPI.Data
             }
             
             _context.Trainings.Remove(training);
-        }
-
-        public void DeleteSetItem(SetItem setItem)
-        {
-            if (setItem == null)
-            {
-                throw new ArgumentNullException(nameof(setItem));
-            }
-            
-            _context.SetItems.Remove(setItem);
         }
 
         public IEnumerable<Exercise> GetAllExercises()
@@ -137,17 +97,7 @@ namespace CalisthenicsAPI.Data
             // Nothing
         }
 
-        public void UpdateSet(Set set)
-        {
-            // Nothing
-        }
-
         public void UpdateTraining(Training training)
-        {
-            // Nothing
-        }
-
-        public void UpdateSetItem(SetItem setItem)
         {
             // Nothing
         }
