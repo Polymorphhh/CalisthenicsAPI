@@ -54,6 +54,7 @@ namespace CalisthenicsAPI.Controllers
             _repository.SaveChanges();
 
             // Commented line below doesn't return the exercises references (not loaded in training model)
+            // so a new query is needed
             // var trainingReadDto = _mapper.Map<TrainingReadDto>(trainingModel);
             var trainingReadDto = _mapper.Map<TrainingReadDto>(_repository.GetTrainingById(trainingModel.Id));
 
