@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using CalisthenicsAPI.Data;
-using CalisthenicsAPI.Dtos;
+using CalisthenicsDtos;
 using CalisthenicsAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 

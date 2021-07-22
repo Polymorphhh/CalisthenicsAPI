@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using AutoMapper.EquivalencyExpression;
-using CalisthenicsAPI.Dtos;
+using CalisthenicsDtos;
 using CalisthenicsAPI.Models;
 
 namespace CalisthenicsAPI.Profiles
